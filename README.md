@@ -68,7 +68,7 @@ StudyNotion aims to provide:
 - A seamless and interactive learning experience for students, making education more accessible and engaging.
 - A platform for instructors to showcase their expertise and connect with learners across the globe.
 
-In the following sections, we will cover the technical details of the platform, including:
+In the following sections, we will cover the technical details of the platform, including :
 1. System architecture: The high-level overview of the platform's components and diagrams of the architecture.
 2. Front-end: The description of the front-end architecture, user interface design, features, and functionalities of the front-end, and frameworks, libraries, and tools used.
 3. Back-end: The description of the back-end architecture, features and functionalities of the back-end, frameworks, libraries, tools used, and data models and database schema.
