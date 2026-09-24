@@ -3,7 +3,7 @@ const Category = require("../models/Category")
 const Section = require("../models/Section")
 const SubSection = require("../models/Subsection")
 const User = require("../models/User")
-const { uploadImageToCloudinary } = require("../utils/imageUploader")
+const { uploadFileToS3 } = require("../utils/s3Uploader");
 const CourseProgress = require("../models/CourseProgress")
 const { convertSecondsToDuration } = require("../utils/secToDuration")
 
@@ -61,10 +61,10 @@ exports.createCourse = async (req, res) => {
       })
     }
 
-    const thumbnailImage = await uploadImageToCloudinary(
-      thumbnail,
-      process.env.FOLDER_NAME
-    )
+    const thumbnailImage = await uploadFileToS3(
+    thumbnail,
+    process.env.FOLDER_NAME
+)
 
     const newCourse = await Course.create({
       courseName,
@@ -123,10 +123,10 @@ exports.editCourse = async (req, res) => {
 
     if (req.files && req.files.thumbnailImage) {
       const thumbnail = req.files.thumbnailImage
-      const thumbnailImage = await uploadImageToCloudinary(
-        thumbnail,
-        process.env.FOLDER_NAME
-      )
+      const thumbnailImage = await uploadFileToS3(
+      thumbnail,
+      process.env.FOLDER_NAME
+)
       course.thumbnail = thumbnailImage.secure_url
     }
 
